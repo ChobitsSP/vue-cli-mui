@@ -12,11 +12,9 @@
 
 <script>
   export default {
-    name: 'hello',
     data() {
       return {
-        list: [],
-        msg: 'Welcome to Your Vue.js App'
+        list: []
       }
     },
     created() {
