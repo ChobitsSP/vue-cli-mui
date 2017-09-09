@@ -29,9 +29,12 @@
       },
       clickHandler() {
         window.clicked('static/scan.html', true, true)
-        EventBus.$off('plus-scan')
+        EventBus.$off('plus-scan')  //cancel all event
         EventBus.$on('plus-scan', this.update)
       }
+    },
+    beforeDestroy() {
+      EventBus.$off('plus-scan', this.update)
     }
   }
 </script>
