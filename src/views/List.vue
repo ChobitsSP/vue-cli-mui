@@ -1,6 +1,16 @@
 <template>
   <div class="mui-content">
-
+    <ul class="mui-table-view mui-table-view-chevron">
+      <li class="mui-table-view-cell mui-media" v-for="item in list">
+        <a class="mui-navigate-right">
+          <img class="mui-media-object mui-pull-left" :src="item.author.avatar_url">
+          <div class="mui-media-body">
+            {{ item.author.loginname }}
+            <p class="mui-ellipsis">{{ item.title }}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,7 +28,7 @@
     },
     methods: {
       async refresh() {
-        const rsp = axios.get('https://cnodejs.org/api/v1/topics')
+        const rsp = await axios.get('https://cnodejs.org/api/v1/topics')
         this.list = rsp.data
       }
     }
