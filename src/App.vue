@@ -4,14 +4,12 @@
       <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
       <h1 class="mui-title">vue mui</h1>
     </header>
-    <img src="./assets/logo.png">
     <router-view></router-view>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'app',
     methods: {
       back() {
         this.$router.go(-1)

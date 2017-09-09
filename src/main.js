@@ -3,8 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import * as directives from './directives'
 
 Vue.config.productionTip = false
+
+// register global utility directives.
+Object.keys(directives).forEach(key => {
+    Vue.directive(key, directives[key]);
+})
 
 /* eslint-disable no-new */
 new Vue({
