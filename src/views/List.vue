@@ -28,7 +28,7 @@
     },
     methods: {
       async refresh() {
-        const rsp = await axios.get('https://cnodejs.org/api/v1/topics')
+        let rsp = await axios.get('https://cnodejs.org/api/v1/topics')
         this.list = rsp.data
       }
     }
