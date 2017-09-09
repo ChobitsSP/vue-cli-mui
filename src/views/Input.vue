@@ -6,7 +6,7 @@
         <input type="text" v-mui-input v-model="message" class="mui-input-clear" placeholder="请输入内容">
       </div>
       <div class="mui-input-row">
-        {{ str }}
+        {{ message }}
       </div>
     </form>
   </div>
