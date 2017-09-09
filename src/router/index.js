@@ -23,6 +23,11 @@ let routes = [
         path: '/List',
         name: 'List',
         component: resolve => require(['@/views/List'], resolve)
+    },
+    {
+        path: '/QrCodeScan',
+        name: 'QrCodeScan',
+        component: resolve => require(['@/views/QrCodeScan'], resolve)
     }
 ]
 

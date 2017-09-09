@@ -6,19 +6,9 @@
     </div>
     <div class="mui-card" style="margin-bottom: 35px;">
       <ul class="mui-table-view">
-        <li class="mui-table-view-cell">
-          <router-link class="mui-navigate-right" :to="{ name: 'Hello' }">
-            Hello
-          </router-link>
-        </li>
-        <li class="mui-table-view-cell">
-          <router-link class="mui-navigate-right" :to="{ name: 'Input' }">
-            Input
-          </router-link>
-        </li>
-        <li class="mui-table-view-cell">
-          <router-link class="mui-navigate-right" :to="{ name: 'List' }">
-            List
+        <li class="mui-table-view-cell" v-for="item in list">
+          <router-link class="mui-navigate-right" :to="{ name: item.name }">
+            {{ item.name }}
           </router-link>
         </li>
       </ul>
@@ -27,8 +17,17 @@
 </template>
 
 <script>
-  export default {
+  import router from '@/router'
 
+  export default {
+    data() {
+      return {
+        list: []
+      }
+    },
+    created() {
+      this.list = router.options.routes.filter(t => t.name !== this.$route.name)
+    }
   }
 </script>
 

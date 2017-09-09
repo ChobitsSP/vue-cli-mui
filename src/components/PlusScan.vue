@@ -1,22 +1,33 @@
-<template>
-  <button type="button" @click="click">
-    <slot></slot>
-  </button>
-</template>
-
 <script>
   import EventBus from '@/utils/EventBus'
 
   export default {
     props: {
-      value: String
+      value: String,
+      tag: {
+        type: String,
+        default: 'div'
+      }
+    },
+    render: function (h) {
+      return h(
+        this.tag,   // tag name 标签名称
+        {
+          // 事件监听器基于 `on`
+          // 所以不再支持如 `v-on:keyup.enter` 修饰器
+          // 需要手动匹配 keyCode。
+          on: {
+            click: this.clickHandler
+          }
+        }, this.$slots.default
+      )
     },
     methods: {
       update(obj) {
         this.$emit('input', obj.result)
         EventBus.$off('plus-scan', this.update)
       },
-      click() {
+      clickHandler() {
         window.clicked('static/scan.html', true, true)
         EventBus.$on('plus-scan', this.update)
       }
