@@ -3,7 +3,7 @@
     <form class="mui-input-group">
       <div class="mui-input-row">
         <label>快速删除</label>
-        <input type="text" v-mui-input v-model="str" class="mui-input-clear" placeholder="请输入内容">
+        <input type="text" v-mui-input v-model="message" class="mui-input-clear" placeholder="请输入内容">
       </div>
       <div class="mui-input-row">
         {{ str }}
@@ -18,13 +18,8 @@
   export default {
     data() {
       return {
-        str: null
+        message: null
       }
-    },
-    mounted() {
-      this.$nextTick(() => {
-
-      })
     }
   }
 </script>
