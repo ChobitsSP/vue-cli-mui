@@ -15,7 +15,7 @@
   export default {
     mounted() {
       this.$nextTick(() => {
-        mui('.mui-input-row input').input()
+        
       })
     }
   }
