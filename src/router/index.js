@@ -18,6 +18,11 @@ let routes = [
         path: '/Input',
         name: 'Input',
         component: resolve => require(['@/views/Input'], resolve)
+    },
+    {
+        path: '/List',
+        name: 'List',
+        component: resolve => require(['@/views/List'], resolve)
     }
 ]
 

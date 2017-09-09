@@ -16,6 +16,11 @@
             Input
           </router-link>
         </li>
+        <li class="mui-table-view-cell">
+          <router-link class="mui-navigate-right" :to="{ name: 'List' }">
+            List
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
