@@ -29,6 +29,7 @@
       },
       clickHandler() {
         window.clicked('static/scan.html', true, true)
+        EventBus.$off('plus-scan')
         EventBus.$on('plus-scan', this.update)
       }
     }
