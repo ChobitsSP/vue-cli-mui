@@ -17,6 +17,7 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <Plus-Scan>扫码</Plus-Scan>
   </div>
 </template>
 
@@ -27,6 +28,9 @@
       return {
         msg: 'Welcome to Your Vue.js App'
       }
+    },
+    components: {
+      PlusScan: require('@/components/PlusScan')
     }
   }
 </script>

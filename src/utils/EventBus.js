@@ -1,6 +1,8 @@
 import Vue from 'vue'
 
-export default const EventBus = new Vue()
+const EventBus = new Vue()
+
+export default EventBus
 
 window.scaned = function (type, result, file) {
     const obj = {
